@@ -1,0 +1,11 @@
+<view class="find">
+    <view class="f-title">{{find.report_title}}</view>
+    <view class="f-taa">{{find.publish_time}}</view>
+    <view class="f-taa">小编：{{find.author}}/主播：{{find.anchor}}</view>
+    <view class="find-img">
+        <image animation="{{animation}}" src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{find.find_picture}}" class="f-img"></image>
+        <image src="/img/6/play.png" class="f-play" wx:if="{{play}}" bindtap="audioPause"></image>
+        <image src="/img/6/pause.png" class="f-play" wx:else bindtap="audioPlay"></image>
+    </view>
+    <view class="f-next" bindtap="toNext">听听别的</view>
+</view>

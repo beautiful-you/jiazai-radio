@@ -1,0 +1,15 @@
+/public/storage
+/public/hot
+/storage/*.key
+/storage/*
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+.DS_Store
+.project
+.settings/*
+.well-known
+.buildpath
+/vendor/costa92/wechat/src/Resources/cert/*
+.user.ini

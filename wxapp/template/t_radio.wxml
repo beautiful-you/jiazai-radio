@@ -1,0 +1,13 @@
+<template name="tRadio">
+
+<view class="t-radio">
+    <!--<image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com{{app.globalData.fileHost}}/{{listing_diagram}}" class="t-r-img"></image>-->
+    <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{listing_diagram}}" class="t-r-img"></image>
+    <view class="t-time">{{publish_time}}</view>
+    <!-- <view class="t-title">{{report_title}}</view> -->
+    <view class="d box-center">
+      <view class="da">{{report_title}}</view>
+    </view>
+</view>
+
+</template> 

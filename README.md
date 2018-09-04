@@ -1,2 +1,1 @@
-# fonggree-jiazai-radio
-fonggree/jiazai-radio
+# jiazai-radio

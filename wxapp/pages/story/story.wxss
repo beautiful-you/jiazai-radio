@@ -1,0 +1,99 @@
+/* pages/story/story.wxss */
+.stody {
+    height:calc(100vh);
+}
+
+.s-top {
+    position: relative;
+    height:600rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.sc-big {
+    width: 200rpx;
+    height: 200rpx;
+    margin-top: 80rpx;
+}
+
+.sc-title {
+    margin-top: 50rpx;
+    font-size: 48rpx;
+}
+
+.sc-text {
+    margin-top: 10rpx;
+    font-size: 36rpx;
+}
+
+.s-mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130rpx;
+}
+
+.s-change {
+    padding: 46rpx;
+    height:calc(100vh - 600rpx);
+    overflow-y: scroll;
+}
+
+.s-center {
+    position: relative;
+    display: inline-block;
+    margin: 16rpx 10rpx;
+    padding-top: 130rpx;
+    width: 140rpx;
+    text-align:center;
+    vertical-align: top;
+}
+
+.sc-img {
+    position: absolute;
+    left: 20rpx;
+    top: 0;
+    z-index: 20;
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: 20rpx;
+}
+
+.audio-img {
+    margin: 15rpx 0;
+    width: 30rpx;
+    height: 38rpx;
+}
+
+.sc-mes {
+    font-size: 28rpx;
+}
+
+.sc-c {
+    position: absolute;
+    left: 20rpx;
+    top: 0;
+    z-index: 10;
+    width: 120rpx;
+    height: 120rpx;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .6s ease-out;
+}
+
+.sc-show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.sc-pause {
+    position: absolute;
+    left: 20rpx;
+    top: 0;
+    z-index: 20;
+    width: 120rpx;
+    height: 120rpx;
+}

@@ -1,0 +1,38 @@
+<view class="listen">
+    <view class="l-title">{{report.report_title}}</view>
+    <view class="l-taa">时间：{{report.publish_time}}</view>
+    <view class="l-taa">小编：{{report.author}}/主播：{{report.anchor}}</view>
+    <view class="l-radio box-center">
+        <image class="radio-img" src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{report.detail_drawing}}" animation="{{animation}}"></image>
+
+        <image class="radio-status" src="/img/5/play.png" catchtap="audioPause" wx:if="{{play}}"></image>
+        <image class="radio-status" src="/img/5/pause.png" catchtap="audioPlay" wx:if="{{!play}}"></image> 
+
+        <image class="radio-switch radio-prev" src="/img/5/prev.png" catchtap="otherAudio" data-mes="0"></image>
+        <image class="radio-switch radio-next" src="/img/5/next.png" catchtap="otherAudio" data-mes="1"></image>
+    </view>
+
+    <view class="l-article">{{report.content}}</view>
+</view>
+
+<view class="bottom">
+        <image src="/img/5/collection-1.png" class="bot-img" bindtap="onColletionTap" wx:if="{{collected == 0}}"></image>
+        <image src="/img/5/collection-2.png" class="bot-img" bindtap="onColletionTap" wx:if="{{collected == 1}}"></image>
+        <image src="/img/5/share.png" class="bot-img"></image>
+        <button open-type="share" plain="true" class="bot-share"></button>
+        <!-- <view class="author-view" style="position:relative;">
+            <block wx:for="{{user}}" wx:key="user" wx:for-item="user">
+                <image src="{{user.avatarurl}}" class="author-img"></image>
+            </block>
+        </view>
+        <text class="bot-mes">已有{{report.page_view}}人看过</text> -->
+        <view class="bot-mes">
+            <view class="author-view" style="position:relative;">
+                 <block wx:for="{{user}}" wx:key="user" wx:for-item="user">
+                    <image src="{{user.avatarurl}}" class="author-img"></image>
+                </block> 
+            </view>
+            <text class="">已有{{report.page_view}}人看过</text>
+        </view>
+        
+    </view>

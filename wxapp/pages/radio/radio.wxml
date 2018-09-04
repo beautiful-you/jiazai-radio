@@ -1,0 +1,31 @@
+<import src="../../template/t_radio.wxml" />
+
+<view class="radio">
+    <image class="radio-img" src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{info.radio[0].pictures[0].radio_picture}}"></image>
+
+    <view class="radio-c">
+        <block wx:for="{{info.column}}" wx:key="column" wx:for-item="column">
+            <view class="r-change box-center" catchtap="toClassify" data-id="{{column.id}}">
+                <view class="change-center">
+                    <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{column.column_picture}}" class="change-img"></image>
+                    <text>{{column.column_name}}</text> 
+                </view>
+            </view>
+        </block>
+    </view>
+    
+    <view class="radio-cont">
+        <view class="r-title">
+            <text class="yellow-line"></text>
+            <text class="r-title-mes">最新推荐</text>
+        </view>
+        
+        <view>
+            <block wx:for="{{info.reports}}" wx:key="radio" wx:for-item="radio">
+                <view bindtap="toListen" data-id="{{radio.id}}">
+                    <template is="tRadio" data="{{...radio}}" />
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

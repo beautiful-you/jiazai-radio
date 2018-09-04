@@ -1,0 +1,96 @@
+<view class="story">
+    <view class="s-top" style="background:{{topColor}};-webkit-transition: all 1s linear;">
+        <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{playStory.big_picture}}" class="sc-big"></image>
+        <text class="sc-title">{{playStory.story_title}}</text>
+        <image src="/img/7/play.png" class="audio-img" wx:if="{{play}}" bindtap="sChangeTwo"></image>
+        <image src="/img/7/pause.png" class="audio-img" wx:else bindtap="sChangeTwo"></image>
+        <!-- <text class="sc-text">{{songState.duration}}</text> -->
+        <image src="/img/7/mask.png" class="s-mask"></image>
+    </view>
+    <view class="s-change">
+
+        <block wx:for="{{story}}" wx:key="story" wx:for-item="story">
+        <view class="s-center" bindtap="sChange" data-id="{{story.id}}">
+            <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{story.small_unchecked_picture}}" class="sc-img" wx:if="{{story.type == 0}}"></image>
+             <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{story.small_picture}}" class="sc-img" wx:else></image> 
+
+              <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{story.background_icon}}" class="sc-c {{story.type == 1?'sc-show':''}}"></image>  
+              <image src="https://jiazaidata.oss-cn-shanghai.aliyuncs.com/{{story.background_unchecked_icon}}" class="sc-c {{story.type == 2?'sc-show':''}}"></image>  
+            <text class="sc-mes">{{story.story_title}}</text>
+        </view>
+        </block>
+
+        <!-- <view class="s-center" bindtap="sChange" data-id="1">
+            <image src="/img/7/s_black_1.png" class="sc-img" wx:if="{{arrType[0].type == 0}}"></image>
+            <image src="/img/7/s_white_1.png" class="sc-img" wx:else></image>
+
+            <image src="/img/7/bg_11.png" class="sc-c {{arrType[0].type == 1?'sc-show':''}}"></image>
+            <image src="/img/7/bg_12.png" class="sc-c {{arrType[0].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text>
+        </view>
+        
+        <view class="s-center" bindtap="sChange" data-id="2">
+            <image src="/img/7/s_black_2.png" class="sc-img" wx:if="{{arrType[1].type == 0}}"></image>
+            <image src="/img/7/s_white_2.png" class="sc-img" wx:else></image>
+
+            <image src="/img/7/bg_21.png" class="sc-c {{arrType[1].type == 1?'sc-show':''}}"></image>
+            <image src="/img/7/bg_22.png" class="sc-c {{arrType[1].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="3">
+            <image src="/img/7/s_black_1.png" class="sc-img" wx:if="{{arrType[2].type == 0}}"></image>
+            <image src="/img/7/s_white_1.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_31.png" class="sc-c {{arrType[2].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_32.png" class="sc-c {{arrType[2].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="4">
+            <image src="/img/7/s_black_2.png" class="sc-img" wx:if="{{arrType[3].type == 0}}"></image>
+            <image src="/img/7/s_white_2.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_41.png" class="sc-c {{arrType[3].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_42.png" class="sc-c {{arrType[3].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="5">
+            <image src="/img/7/s_black_1.png" class="sc-img" wx:if="{{arrType[4].type == 0}}"></image>
+            <image src="/img/7/s_white_1.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_51.png" class="sc-c {{arrType[4].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_52.png" class="sc-c {{arrType[4].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="6">
+            <image src="/img/7/s_black_2.png" class="sc-img" wx:if="{{arrType[5].type == 0}}"></image>
+            <image src="/img/7/s_white_2.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_61.png" class="sc-c {{arrType[5].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_62.png" class="sc-c {{arrType[5].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="7">
+            <image src="/img/7/s_black_1.png" class="sc-img" wx:if="{{arrType[6].type == 0}}"></image>
+            <image src="/img/7/s_white_1.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_71.png" class="sc-c {{arrType[6].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_72.png" class="sc-c {{arrType[6].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view>
+
+        <view class="s-center" bindtap="sChange" data-id="8">
+            <image src="/img/7/s_black_2.png" class="sc-img" wx:if="{{arrType[7].type == 0}}"></image>
+            <image src="/img/7/s_white_2.png" class="sc-img" wx:else></image>
+
+             <image src="/img/7/bg_81.png" class="sc-c {{arrType[7].type == 1?'sc-show':''}}"></image> 
+            <image src="/img/7/bg_82.png" class="sc-c {{arrType[7].type == 2?'sc-show':''}}"></image>
+            <text class="sc-mes">月亮粑粑</text> 
+        </view> -->
+        
+    </view>
+</view>

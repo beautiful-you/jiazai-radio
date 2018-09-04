@@ -1,0 +1,46 @@
+{
+    "pages": [
+        
+        "pages/radio/radio",
+        "pages/story/story",
+        "pages/find/find",
+        "pages/user/user",
+        "pages/classify/classify",
+        "pages/listen/listen"
+    ],
+    "window": {
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "嘉仔",
+        "navigationBarTextStyle":"black"
+    },
+    "tabBar": {
+        "color": "#ddd",
+        "borderStyle": "white",
+        "selectedColor": "#1f4ba5",
+        "backgroundColor": "#fff",
+        "position": "bottom",
+        "list": [{
+            "pagePath": "pages/radio/radio",
+            "text":"嘉语",
+            "iconPath": "img/1/radio-1.png",
+            "selectedIconPath": "img/1/radio-2.png"
+        }, {
+            "pagePath": "pages/story/story",
+            "text": "故事",            
+            "iconPath": "img/1/story-1.png",
+            "selectedIconPath": "img/1/story-2.png"
+        }, {
+            "pagePath": "pages/find/find",
+            "text": "发现",
+            "iconPath": "img/1/find-1.png",
+            "selectedIconPath": "img/1/find-2.png"
+        }, {
+            "pagePath": "pages/user/user",
+            "text": "我的",
+            "iconPath": "img/1/user-1.png",
+            "selectedIconPath": "img/1/user-2.png"
+        }]
+    }
+
+}

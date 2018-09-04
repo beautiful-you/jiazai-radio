@@ -1,0 +1,53 @@
+<import src="../../template/t_radio.wxml" />
+
+<view class="user">
+    <view class="u-top">
+        <image wx:if="{{userInfo}}" src="{{userInfo.avatarurl}}" class="u-head"></image>
+        <image wx:else src="/img/3/head.png" class="u-head"></image>
+        <text class="u-name">{{userInfo.nickname}}</text>
+    </view>
+    <view class="u-cont">
+        <view class="u-func">
+            <view catchtap="userswitch" data-id="1" class="u-list {{switchId == 1?'list-checked':''}}">我的收藏</view>
+            <view catchtap="userswitch" data-id="2" class="u-list {{switchId == 2?'list-checked':''}}">浏览历史</view>
+            <!-- <view catchtap="userswitch" data-id="3" class="u-list {{switchId == 3?'list-checked':''}}">我的录音</view> -->
+        </view>
+        <!-- 我的收藏 -->
+        <view class="classname" wx:if="{{switchId == 1}}">        
+            <view wx:if="{{colRecord.length>0}}" class="classname">
+            <block wx:for="{{colRecord}}" wx:key="radio" wx:for-item="radio">
+                <view class="classname" bindtap="toListen" data-id="{{radio.report_id}}">
+                <template is="tRadio" data="{{...radio.report}}" />
+                </view>
+            </block>
+            </view>
+            <view wx:if="{{colRecord.length==0}}" class="classname" style="text-align: center; margin-top:14rpx;">
+            <!-- <image class="no-recordimg" src="/img/4/no-audio.png"></image> -->
+            <text class="no-recordtxt">没有收藏</text>
+            </view>   
+        </view>
+
+        <!-- 浏览历史 -->
+        <view class="classname" wx:if="{{switchId == 2}}">            
+            <view wx:if="{{hisRecord.length>0}}" class="classname">
+            <block wx:for="{{hisRecord}}" wx:key="radio" wx:for-item="radio">
+                <view class="classname" bindtap="toListen" data-id="{{radio.report_id}}">
+                <template is="tRadio" data="{{...radio.report}}" />
+                </view>
+            </block>
+            </view>
+            <view wx:if="{{hisRecord.length==0}}" class="classname" style="text-align: center; margin-top:14rpx;">
+            <text class="no-recordtxt">没有浏览</text>
+            <!-- <image class="no-recordimg" src="/img/4/no-audio.png"></image> -->
+            </view>  
+        </view>
+
+        <!-- 我的录音 -->
+        <!-- <view class="classname" wx:if="{{switchId == 3}}">
+            <view class="no-audio">
+                <image src="/img/4/no-audio.png" class="no-audio-img"></image>
+                <view bindtap="startluyin" class="want-audio">我要录音</view>
+            </view> 
+        </view> -->
+    </view>
+</view>

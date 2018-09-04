@@ -1,0 +1,7 @@
+<import src="../../template/t_radio.wxml" />
+
+<block wx:for="{{radio}}" wx:key="radio" wx:for-item="radio">
+    <view bindtap="toListen" data-id="{{radio.id}}">
+        <template is="tRadio" data="{{...radio}}" />
+    </view>
+</block>
